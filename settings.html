@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiftcart - Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body class="page-settings">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Swiftcart Home">
+        <img src="./photos/Logo.png" alt="Swiftcart logo" class="brand-logo" />
+      </a>
+      <nav class="navbar" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="./shop.html">Shop</a></li>
+          <li><a href="./schedule.html">My Schedule</a></li>
+          <li><a class="active" href="./settings.html">Settings</a></li>
+        </ul>
+      </nav>
+      <a class="account-logo" href="./settings.html" aria-label="Account">
+        <span class="account-icon">&#128100;</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="page-title">
+        <h1>Settings</h1>
+        <p>Manage account preferences and shopping behavior.</p>
+      </section>
+
+      <section class="settings-layout" aria-label="Settings panels">
+        <article class="settings-card">
+          <h2>Notifications</h2>
+          <label><input type="checkbox" checked /> Delivery updates</label>
+          <label><input type="checkbox" checked /> Weekly deals</label>
+          <label><input type="checkbox" /> SMS alerts</label>
+        </article>
+
+        <article class="settings-card">
+          <h2>Preferences</h2>
+          <label><input type="checkbox" checked /> Show local stores first</label>
+          <label><input type="checkbox" /> Auto-reorder staples</label>
+          <label><input type="checkbox" checked /> Save payment methods</label>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="footer-shell">
+        <p class="footer-brand"><span class="footer-dot" aria-hidden="true"></span> Swiftcart</p>
+        <p class="footer-copy">Copyright © 2026 Swiftcart. Fresh local shopping, simplified.</p>
+        <a class="footer-link" href="./settings.html">Manage Account</a>
+      </div>
+    </footer>
+  </body>
+</html>
