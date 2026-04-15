@@ -1,164 +1,113 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiftcart - Shopping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body class="page-home">
+    <header class="site-header">
+        <a class="brand" href="#" aria-label="SwiftCart Home">
+            <img src="./photos/Logo.png" alt="SwiftCart logo" class="brand-logo" />
+        </a>
+        <nav class="navbar" aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./schedule.html">My Schedule</a></li>
+                <li><a href="./settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <a class="account-logo" href="#" aria-label="Account">
+            <span class="account-icon">&#128100;</span>
+        </a>
+    </header>
 
-:root {
-    --bg: #fcf8f5;
-    --text: #100a05;
-    --secondary: #8ed9b0;
-    --accent: #67becc;
-    --accent-readable: #2a6f7a;
-    --gray-bar: #e9dfd7;
-}
+    <main>
+        <section class="carousel-section">
+            <h1>New Food Arrivals</h1>
+            <div class="carousel">
+                <button class="carousel-arrow carousel-arrow-prev" id="carouselPrev" aria-label="Previous">&#10094;</button>
+                <div class="carousel-track" id="arrivalTrack">
+                    <article class="arrival-card tone-one">
+                        <p class="store-name">Desert Fresh Market</p>
+                        <h2>Organic Avocado Bundle</h2>
+                        <p>Fresh-picked this morning. Limited stock.</p>
+                    </article>
+                    <article class="arrival-card tone-two">
+                        <p class="store-name">Sunset Butcher House</p>
+                        <h2>Premium Ribeye Cuts</h2>
+                        <p>Dry-aged and ready for tonight.</p>
+                    </article>
+                    <article class="arrival-card tone-three">
+                        <p class="store-name">Green Basket Co-op</p>
+                        <h2>Seasonal Fruit Mix</h2>
+                        <p>Sweet citrus and tropical picks.</p>
+                    </article>
+                    <article class="arrival-card tone-four">
+                        <p class="store-name">Hillside Bakery</p>
+                        <h2>Warm Sourdough</h2>
+                        <p>Just baked. Crisp crust with soft center.</p>
+                    </article>
+                    <article class="arrival-card tone-five">
+                        <p class="store-name">Valley Dairy Depot</p>
+                        <h2>Farm Yogurt Pack</h2>
+                        <p>High-protein cups in mixed flavors.</p>
+                    </article>
+                </div>
+                <button class="carousel-arrow carousel-arrow-next" id="carouselNext" aria-label="Next">&#10095;</button>
+            </div>
+        </section>
 
-body {
-    font-family: "Poppins", sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-}
+        <section class="categories">
+            <h2>Categories</h2>
+            <div class="category-row">
+                <div class="category-circle">Meats</div>
+                <div class="category-circle">Fruits</div>
+                <div class="category-circle">Vegetables</div>
+                <div class="category-circle">Dairy</div>
+                <div class="category-circle">Bakery</div>
+            </div>
+        </section>
+    </main>
 
-/* Header & Nav */
-.site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 5%;
-}
+    <footer class="site-footer">
+        <div class="footer-shell">
+            <p class="footer-copy">Copyright © 2026 Swiftcart.</p>
+            <a class="footer-link" href="./settings.html">Manage Account</a>
+        </div>
+    </footer>
 
-.brand-logo {
-    height: 50px; /* Adjusted from 126px to fit better */
-    width: auto;
-}
+    <script>
+        const track = document.getElementById('arrivalTrack');
+        const prevButton = document.getElementById('carouselPrev');
+        const nextButton = document.getElementById('carouselNext');
+        let currentIndex = 0;
 
-.navbar {
-    background: var(--gray-bar);
-    padding: 10px 30px;
-    border-radius: 50px;
-}
+        function updateCarousel() {
+            const cardWidth = track.firstElementChild.getBoundingClientRect().width + 16;
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < track.children.length - 3) {
+                currentIndex++;
+                updateCarousel();
+            } else {
+                currentIndex = 0;
+                updateCarousel();
+            }
+        });
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--accent-readable);
-    font-weight: 600;
-}
-
-.account-logo {
-    width: 45px;
-    height: 45px;
-    background: var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-/* Carousel */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.carousel {
-    position: relative;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 16px;
-    transition: transform 0.5s ease-in-out;
-}
-
-.arrival-card {
-    min-width: calc(33.333% - 11px); /* Shows 3 cards */
-    height: 250px;
-    border-radius: 20px;
-    padding: 25px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    z-index: 1;
-}
-
-/* Overlay to make text readable */
-.arrival-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    border-radius: 20px;
-    z-index: -1;
-}
-
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    background: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.carousel-arrow-prev { left: 10px; }
-.carousel-arrow-next { right: 10px; }
-
-/* Background Images - Ensure these files exist in your photos folder! */
-.tone-one { background-image: url('../photos/Avo slide.png'); }
-.tone-two { background-image: url('../photos/Ribeye Cuts slide.png'); }
-.tone-three { background-image: url('../photos/fruit slide.png'); }
-.tone-four { background-image: url('../photos/Bread slide.png'); }
-.tone-five { background-image: url('../photos/Yogurt slide.png'); }
-
-/* Categories */
-.category-row {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.category-circle {
-    width: 100px;
-    height: 100px;
-    background: var(--secondary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.footer-shell {
-    margin-top: 50px;
-    padding: 20px;
-    background: var(--gray-bar);
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-@media (max-width: 768px) {
-    .arrival-card { min-width: 100%; }
-    .category-row { flex-wrap: wrap; justify-content: center; }
-}
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+    </script>
+</body>
+</html>
