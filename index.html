@@ -1,191 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="css/styles.css">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Swiftcart - Shopping</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/main.css" />
-  </head>
-  <body class="page-home">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body class="page-home">
     <header class="site-header">
-      <a class="brand" href="#" aria-label="SwiftCart Home">
-        <img src="./photos/Logo.png" alt="SwiftCart logo" class="brand-logo" />
-      </a>
-      <nav class="navbar" aria-label="Main navigation">
-        <ul class="nav-links">
-          <li><a href="./shop.html">Shop</a></li>
-          <li><a href="./schedule.html">My Schedule</a></li>
-          <li><a href="./settings.html">Settings</a></li>
-        </ul>
-      </nav>
-      <a class="account-logo" href="#" aria-label="Account">
-        <span class="account-icon">&#128100;</span>
-      </a>
+        <a class="brand" href="#" aria-label="SwiftCart Home">
+            <img src="./photos/Logo.png" alt="SwiftCart logo" class="brand-logo" />
+        </a>
+        <nav class="navbar" aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./schedule.html">My Schedule</a></li>
+                <li><a href="./settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <a class="account-logo" href="#" aria-label="Account">
+            <span class="account-icon">&#128100;</span>
+        </a>
     </header>
 
     <main>
-      <section class="carousel-section" aria-label="New food arrivals from local stores">
-        <h1>New Food Arrivals</h1>
-        <div class="carousel" aria-live="polite">
-          <button class="carousel-arrow carousel-arrow-prev" type="button" id="carouselPrev" aria-label="Previous items">
-            &#10094;
-          </button>
-          <div class="carousel-track" id="arrivalTrack">
-            <article class="arrival-card tone-one">
-              <p class="store-name">Desert Fresh Market</p>
-              <h2>Organic Avocado Bundle</h2>
-              <p>Fresh-picked this morning. Limited stock.</p>
-            </article>
-            <article class="arrival-card tone-two">
-              <p class="store-name">Sunset Butcher House</p>
-              <h2>Premium Ribeye Cuts</h2>
-              <p>Dry-aged, local-sourced, and ready for tonight.</p>
-            </article>
-            <article class="arrival-card tone-three">
-              <p class="store-name">Green Basket Co-op</p>
-              <h2>Seasonal Fruit Mix Crate</h2>
-              <p>Sweet citrus, berries, and tropical picks.</p>
-            </article>
-            <article class="arrival-card tone-four">
-              <p class="store-name">Hillside Bakery</p>
-              <h2>Warm Sourdough Loaves</h2>
-              <p>Just baked. Crisp crust with soft center.</p>
-            </article>
-            <article class="arrival-card tone-five">
-              <p class="store-name">Valley Dairy Depot</p>
-              <h2>Farm Yogurt Pack</h2>
-              <p>High-protein cups in mixed fruit flavors.</p>
-            </article>
-            <article class="arrival-card tone-six">
-              <p class="store-name">Market Street Produce</p>
-              <h2>Leafy Greens Box</h2>
-              <p>Spinach, kale, and romaine picked today.</p>
-            </article>
-          </div>
-          <button class="carousel-arrow carousel-arrow-next" type="button" id="carouselNext" aria-label="Next items">
-            &#10095;
-          </button>
-        </div>
-      </section>
+        <section class="carousel-section">
+            <h1>New Food Arrivals</h1>
+            <div class="carousel">
+                <button class="carousel-arrow carousel-arrow-prev" id="carouselPrev" aria-label="Previous">&#10094;</button>
+                <div class="carousel-track" id="arrivalTrack">
+                    <article class="arrival-card tone-one">
+                        <p class="store-name">Desert Fresh Market</p>
+                        <h2>Organic Avocado Bundle</h2>
+                        <p>Fresh-picked this morning. Limited stock.</p>
+                    </article>
+                    <article class="arrival-card tone-two">
+                        <p class="store-name">Sunset Butcher House</p>
+                        <h2>Premium Ribeye Cuts</h2>
+                        <p>Dry-aged and ready for tonight.</p>
+                    </article>
+                    <article class="arrival-card tone-three">
+                        <p class="store-name">Green Basket Co-op</p>
+                        <h2>Seasonal Fruit Mix</h2>
+                        <p>Sweet citrus and tropical picks.</p>
+                    </article>
+                    <article class="arrival-card tone-four">
+                        <p class="store-name">Hillside Bakery</p>
+                        <h2>Warm Sourdough</h2>
+                        <p>Just baked. Crisp crust with soft center.</p>
+                    </article>
+                    <article class="arrival-card tone-five">
+                        <p class="store-name">Valley Dairy Depot</p>
+                        <h2>Farm Yogurt Pack</h2>
+                        <p>High-protein cups in mixed flavors.</p>
+                    </article>
+                </div>
+                <button class="carousel-arrow carousel-arrow-next" id="carouselNext" aria-label="Next">&#10095;</button>
+            </div>
+        </section>
 
-      <section class="categories" aria-label="Food categories">
-        <h2>Categories</h2>
-        <div class="category-row">
-          <article class="category-circle">Meats</article>
-          <article class="category-circle">Fruits</article>
-          <article class="category-circle">Vegetables</article>
-          <article class="category-circle">Dairy</article>
-          <article class="category-circle">Bakery</article>
-        </div>
-      </section>
-
-      <section class="recent" aria-label="Recently purchased items">
-        <h2>Recently Purchased</h2>
-        <div class="recent-grid">
-          <article class="recent-item">
-            <h3>Free-Range Eggs</h3>
-            <p>Purchased 2 days ago</p>
-          </article>
-          <article class="recent-item">
-            <h3>Chicken Breast Pack</h3>
-            <p>Purchased 3 days ago</p>
-          </article>
-          <article class="recent-item">
-            <h3>Blueberry Basket</h3>
-            <p>Purchased 5 days ago</p>
-          </article>
-        </div>
-      </section>
+        <section class="categories">
+            <h2>Categories</h2>
+            <div class="category-row">
+                <div class="category-circle">Meats</div>
+                <div class="category-circle">Fruits</div>
+                <div class="category-circle">Vegetables</div>
+                <div class="category-circle">Dairy</div>
+                <div class="category-circle">Bakery</div>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer" aria-label="Site footer">
-      <div class="footer-shell">
-        <p class="footer-copy">Copyright © 2026 Swiftcart. Fresh local shopping, simplified.</p>
-        <a class="footer-link" href="./settings.html">Manage Account</a>
-      </div>
+    <footer class="site-footer">
+        <div class="footer-shell">
+            <p class="footer-copy">Copyright © 2026 Swiftcart.</p>
+            <a class="footer-link" href="./settings.html">Manage Account</a>
+        </div>
     </footer>
 
     <script>
-      const track = document.getElementById('arrivalTrack');
-      const cards = Array.from(track.children);
-      const prevButton = document.getElementById('carouselPrev');
-      const nextButton = document.getElementById('carouselNext');
-      let currentIndex = 0;
-      let autoRotateId;
+        const track = document.getElementById('arrivalTrack');
+        const prevButton = document.getElementById('carouselPrev');
+        const nextButton = document.getElementById('carouselNext');
+        let currentIndex = 0;
 
-      function cardsVisible() {
-        return window.innerWidth <= 820 ? 1 : 3;
-      }
+        function updateCarousel() {
+            const cardWidth = track.firstElementChild.getBoundingClientRect().width + 16;
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
 
-      function stepSize() {
-        const cardRect = cards[0].getBoundingClientRect();
-        const gap = parseFloat(getComputedStyle(track).gap) || 0;
-        return cardRect.width + gap;
-      }
-
-      function paintFocus() {
-        cards.forEach((card, index) => {
-          card.classList.toggle('is-focus', index === currentIndex + Math.floor(cardsVisible() / 2));
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < track.children.length - 3) {
+                currentIndex++;
+                updateCarousel();
+            } else {
+                currentIndex = 0;
+                updateCarousel();
+            }
         });
-      }
 
-      function updateTrack() {
-        track.style.transform = `translateX(-${currentIndex * stepSize()}px)`;
-        paintFocus();
-      }
-
-      function moveCarousel() {
-        const maxIndex = cards.length - cardsVisible();
-        currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
-        updateTrack();
-      }
-
-      function moveBy(step) {
-        const maxIndex = cards.length - cardsVisible();
-        currentIndex += step;
-
-        if (currentIndex < 0) {
-          currentIndex = maxIndex;
-        }
-        if (currentIndex > maxIndex) {
-          currentIndex = 0;
-        }
-
-        updateTrack();
-      }
-
-      function startAutoRotate() {
-        clearInterval(autoRotateId);
-        autoRotateId = setInterval(moveCarousel, 6000);
-      }
-
-      window.addEventListener('resize', () => {
-        const maxIndex = cards.length - cardsVisible();
-        if (currentIndex > maxIndex) {
-          currentIndex = maxIndex;
-        }
-        updateTrack();
-      });
-
-      prevButton.addEventListener('click', () => {
-        moveBy(-1);
-        startAutoRotate();
-      });
-
-      nextButton.addEventListener('click', () => {
-        moveBy(1);
-        startAutoRotate();
-      });
-
-      updateTrack();
-      startAutoRotate();
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
     </script>
-  </body>
+</body>
 </html>
